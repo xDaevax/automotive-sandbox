@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSandbox", "AutoSandbox\AutoSandbox.csproj", "{656FC59C-E294-48EE-ADFD-3F156A40D7D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSandbox.Demo", "..\Demo\AutoSandbox.Demo\AutoSandbox.Demo.csproj", "{29A5878F-47F0-41AD-BB1C-3FF0BDEE0311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSandbox.Tests", "..\Tests\AutoSandbox.Tests\AutoSandbox.Tests.csproj", "{EE5BE67A-4908-4B19-8A47-EDF4F49EC91C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{656FC59C-E294-48EE-ADFD-3F156A40D7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{656FC59C-E294-48EE-ADFD-3F156A40D7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{656FC59C-E294-48EE-ADFD-3F156A40D7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{656FC59C-E294-48EE-ADFD-3F156A40D7D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29A5878F-47F0-41AD-BB1C-3FF0BDEE0311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29A5878F-47F0-41AD-BB1C-3FF0BDEE0311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29A5878F-47F0-41AD-BB1C-3FF0BDEE0311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29A5878F-47F0-41AD-BB1C-3FF0BDEE0311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE5BE67A-4908-4B19-8A47-EDF4F49EC91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE5BE67A-4908-4B19-8A47-EDF4F49EC91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE5BE67A-4908-4B19-8A47-EDF4F49EC91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE5BE67A-4908-4B19-8A47-EDF4F49EC91C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
