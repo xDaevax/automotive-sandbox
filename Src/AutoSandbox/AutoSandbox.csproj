@@ -44,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Automotive\Hardware\Fasteners\Clamp.cs" />
+    <Compile Include="Automotive\Hardware\Fasteners\FastenerState.cs" />
+    <Compile Include="Automotive\Hardware\Fasteners\IFastener.cs" />
+    <Compile Include="Forces\Rotation\RotationDirection.cs" />
+    <Compile Include="Forces\Rotation\RotationEventArgs.cs" />
     <Compile Include="Inputs\FillRequest.cs" />
     <Compile Include="Inputs\FuelSources\Fuel.cs" />
     <Compile Include="Inputs\IContainsFuel.cs" />
@@ -55,10 +60,11 @@
     <Compile Include="Units\SpeedUnits.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forces\" />
+    <Folder Include="Automotive\Components\" />
+    <Folder Include="Maintenance\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="Build\StyleCop\StyleCop.targets" />
+  <Import Project="Include\StyleCop\StyleCop.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
