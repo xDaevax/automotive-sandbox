@@ -1,6 +1,6 @@
 ﻿namespace AutoSandbox.Units {
     /// <summary>
-    /// Enumeration that contains possible values for units used when measured different types of speed.  This type is primarily used for computation,
+    /// Enumeration that contains possible values for units used when measuring different types of speed.  This type is primarily used for computation,
     /// but can also be used for rendering units for display / output.
     /// </summary>
     public enum SpeedUnits : int {
