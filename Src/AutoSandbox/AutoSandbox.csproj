@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Automotive\Components\Tubing\Tube.cs" />
     <Compile Include="Automotive\Hardware\Fasteners\Clamp.cs" />
     <Compile Include="Automotive\Hardware\Fasteners\FastenerState.cs" />
     <Compile Include="Automotive\Hardware\Fasteners\IFastener.cs" />
@@ -58,10 +59,15 @@
     <Compile Include="Materials\IMaterial.cs" />
     <Compile Include="Materials\MaterialType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Units\LengthUnits.cs" />
+    <Compile Include="Units\MeasuringUnit.cs" />
     <Compile Include="Units\SpeedUnits.cs" />
     <Compile Include="Units\TemperatureUnit.cs" />
+    <Compile Include="Units\UnitNotationsProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Automotive\Components\Containers\" />
+    <Folder Include="Automotive\Components\Feedback\Indicators\" />
     <Folder Include="Automotive\Components\Feedback\Sensors\" />
     <Folder Include="Automotive\Systems\Drivetrain\" />
     <Folder Include="Automotive\Systems\Exhaust\" />
