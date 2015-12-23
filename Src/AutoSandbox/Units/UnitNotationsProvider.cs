@@ -10,6 +10,7 @@ namespace AutoSandbox.Units {
         private static bool _defaultsInitialized;
         private static Dictionary<LengthUnits, string> _lengthNotations;
         private static Dictionary<SpeedUnits, string> _speedNotations;
+        private static Dictionary<TemperatureUnit, string> _temperatureNotations;
         private static Dictionary<Type, dynamic> _notations;
 
         /// <summary>
@@ -19,6 +20,7 @@ namespace AutoSandbox.Units {
             _defaultsInitialized = false;
             _lengthNotations = new Dictionary<LengthUnits, string>();
             _speedNotations = new Dictionary<SpeedUnits, string>();
+            _temperatureNotations = new Dictionary<TemperatureUnit, string>();
             _notations = new Dictionary<Type, dynamic>();
             InitializeDefaults();
         } // end default static constructor
@@ -32,6 +34,7 @@ namespace AutoSandbox.Units {
                 InitializeSpeedUnits();
                 _notations.Add(typeof(SpeedUnits), _speedNotations as dynamic);
                 _notations.Add(typeof(LengthUnits), _lengthNotations as dynamic);
+                _notations.Add(typeof(TemperatureUnit), _temperatureNotations as dynamic);
                 _defaultsInitialized = true;
             }
         } // end method InitializeDefaults
@@ -61,6 +64,16 @@ namespace AutoSandbox.Units {
             _speedNotations.Add(SpeedUnits.MetersPerSecond, "m/s");
             _speedNotations.Add(SpeedUnits.MilesPerHour, "mph");
             _speedNotations.Add(SpeedUnits.RotationsPerMinute, "RPM");
+        } // end method InitializeSpeedUnits
+
+        /// <summary>
+        /// Populates the temperature unit dictionary with known values.
+        /// </summary>
+        internal static void InitializeTemperatureUnits() {
+            _temperatureNotations.Add(TemperatureUnit.Celsius, "C");
+            _temperatureNotations.Add(TemperatureUnit.Fahrenheit, "F");
+            _temperatureNotations.Add(TemperatureUnit.Kelvin, "K");
+            _temperatureNotations.Add(TemperatureUnit.Newton, "N");
         } // end method InitializeSpeedUnits
 
         /// <summary>
@@ -100,6 +113,24 @@ namespace AutoSandbox.Units {
         } // end function SpeedNotation
 
         /// <summary>
+        /// Returns the common notation for a given temperature <paramref name="unit"/> of measure.
+        /// </summary>
+        /// <param name="unit">The unit whose notation is being looked-up.</param>
+        /// <returns>The common notation for the given unit.</returns>
+        /// <exception cref="KeyNotFoundException">Thrown if the given <paramref name="unit"/> is not found / known.</exception>
+        public static string TemperatureNotation(TemperatureUnit unit) {
+            string returnValue = string.Empty;
+
+            if (_temperatureNotations.ContainsKey(unit)) {
+                returnValue = _temperatureNotations[unit];
+            } else {
+                throw new KeyNotFoundException("Unknown unit of speed: " + unit.ToString());
+            }
+
+            return returnValue;
+        } // end function TemperatureNotation
+
+        /// <summary>
         /// Returns the common notation for a given <paramref name="unit"/> of measure.
         /// </summary>
         /// <typeparam name="TUnit">The type of unit to look-up</typeparam>
@@ -110,7 +141,13 @@ namespace AutoSandbox.Units {
             string returnValue = string.Empty;
 
             if (_notations.ContainsKey(typeof(TUnit))) {
-                returnValue = _notations[typeof(TUnit)][unit];
+                dynamic list = _notations[typeof(TUnit)];
+
+                if (list.ContainsKey(unit)) {
+                    returnValue = list[unit];
+                } else {
+                    throw new KeyNotFoundException("Unknown unit: " + unit.ToString());
+                }
             } else {
                 throw new KeyNotFoundException("Unknown unit type: " + typeof(TUnit).ToString());
             }

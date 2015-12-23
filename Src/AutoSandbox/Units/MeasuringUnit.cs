@@ -1,9 +1,12 @@
-﻿namespace AutoSandbox.Units {
+﻿using System.Runtime.InteropServices;
+
+namespace AutoSandbox.Units {
     /// <summary>
     /// Structure that stores a value and a unit of measure.
     /// </summary>
     /// <typeparam name="TValue">The type of value being stored by the measurement.</typeparam>
     /// <typeparam name="TUnit">The type of unit being stored by the measurement.</typeparam>
+    [StructLayout(LayoutKind.Auto)]
     public struct MeasuringUnit<TValue, TUnit> where TValue : struct where TUnit : struct {
         /// <summary>
         /// The value of the measurement
